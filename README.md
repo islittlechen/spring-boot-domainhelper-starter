@@ -5,14 +5,15 @@
 如
 public class CompanyDomainProcessor implements DomainProcessor {
 
-@Override
-public UserDomain processor() {
-	UserInfo userInfo = (UserInfo)DomainHelper.get();
-	UserDomain userDomain = new UserDomain();
-	userDomain.setAdmin(userInfo.getIsAdmin()==1);
-	userDomain.setDomains(userInfo.getMgtCompany());
-	return userDomain;
-}
+    @Override
+    public UserDomain processor() {
+        UserInfo userInfo = (UserInfo)DomainHelper.get();
+        UserDomain userDomain = new UserDomain();
+        userDomain.setAdmin(userInfo.getIsAdmin()==1);
+        userDomain.setDomains(userInfo.getMgtCompany());
+        return userDomain;
+    }
+    
 }
 
 
